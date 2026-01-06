@@ -10,9 +10,9 @@ while true
   break if escolha == 0
 
   print "Digite o primeiro número: "
-  num1 = gets.chomp.to_i
+  num1 = gets.chomp.to_f
   print "Digite o segundo número: "
-  num2 = gets.chomp.to_i
+  num2 = gets.chomp.to_f
   
   case escolha
     when 1
@@ -22,6 +22,10 @@ while true
     when 3
       puts "O resultado da multiplicação deu: #{num1*num2}"
     when 4
-      puts "O resultado da divisão deu: #{num1/num2}"
+      if num2 == 0
+        puts "Não pode dividir um número por zero"
+      else
+        puts "O resultado da divisão deu: #{num1/num2}"
+      end
   end
 end
